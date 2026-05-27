@@ -2,25 +2,25 @@ class Dodoc < Formula
   desc "Compile .do files to SQL — standalone dodo compiler"
   homepage "https://getdodo.dev"
   license "MIT"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.1.1/dodoc-macos-arm64.tar.gz"
-      sha256 "e37428399aaf2ed0f51c9c51229a774ffa6d2096b23c0b58579002e81f250fb6"
+      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.2.0/dodoc-macos-arm64.tar.gz"
+      sha256 "10caa09b8b057a3d50bb59078f16853bbb310578d5dadcf1fcef59364b1ba0b6"
     else
-      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.1.1/dodoc-macos-x86_64.tar.gz"
-      sha256 "dc1330458f132e7a27d046525652f2f56cf6d40505c6ece02b036bed33509dd0"
+      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.2.0/dodoc-macos-x86_64.tar.gz"
+      sha256 "6583ed688b6e977500e05ed573a8fb3973a7efd117a88e9d6d90c9472c5e0901"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.1.1/dodoc-linux-arm64.tar.gz"
-      sha256 "8f84873a3120aa2471f1457fdbea629640dda5d11c674491d571b185cdc3dbf0"
+      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.2.0/dodoc-linux-arm64.tar.gz"
+      sha256 "39a127682b5f0b57cf499c1420cbf82b0103c91347e27321143dedd2fdfeee91"
     else
-      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.1.1/dodoc-linux-x86_64.tar.gz"
-      sha256 "5e44bd4ba20621e8ee553fce73767c4faf2045735d3b1ecd52e2a193f5ab6d98"
+      url "https://github.com/codedthinking/dodo/releases/download/dodoc-v0.2.0/dodoc-linux-x86_64.tar.gz"
+      sha256 "547a0586815e00fb3b6220479d0409d0bacdcd302c121be4b6690e1a278da80b"
     end
   end
 
@@ -29,6 +29,6 @@ class Dodoc < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/dodoc --help")
+    assert_match "dodoc", shell_output("#{bin}/dodoc --version")
   end
 end
